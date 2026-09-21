@@ -180,3 +180,8 @@ a.linkbtn{text-decoration:none}
 .calccard__icon{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.16);display:grid;place-items:center;margin-bottom:4px}
 .calccard h3{color:#fff;font-size:17px;line-height:1.25}
 .calccard p{font-size:14px;color:#d6efef;flex:1}
+
+.qgrid--wide{grid-template-columns:1fr}
+.qgrid--wide .learn{position:static;max-height:none}
+.qgrid--wide .learn details{display:inline-block;width:100%}
+@media (min-width:1000px){.qgrid--wide .learn{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}.qgrid--wide .learn h2,.qgrid--wide .learn .eyebrow{grid-column:1/-1}}

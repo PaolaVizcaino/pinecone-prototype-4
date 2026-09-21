@@ -28,7 +28,7 @@ export default function QuestionPage({ params }) {
       </div>
 
       <a className="learnjump" href="#learn">New to this? Read the idea behind it</a>
-      <div className="qgrid">
+      <div className={q.game.wide ? "qgrid qgrid--wide" : "qgrid"}>
         <GameFrame game={q.game} />
         <LearnPanel learn={q.learn} />
       </div>
