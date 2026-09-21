@@ -309,7 +309,7 @@ chips($('#priceChips'),[{k:1,t:'Used · $15,000',v:15000,r:10},{k:2,t:'New · $2
 function tab(card){$('#card').hidden=!card;$('#car').hidden=card;$('#tabCard').setAttribute('aria-selected',String(card));$('#tabCar').setAttribute('aria-selected',String(!card));(window.self===window.top&&window.scrollTo(0,0))}
 $('#tabCard').onclick=()=>tab(true);$('#tabCar').onclick=()=>tab(false);
 taps($('#tapCard'));taps($('#tapCar'));gtxt();carCalc();showCard('c1');
-if(/tab=car/.test(location.search)){tab(false);document.querySelector('.tabs').hidden=true}else if(/tab=card/.test(location.search)){document.querySelector('.tabs').hidden=true}
+if(/tab=car(&|$)/.test(location.search)){tab(false);document.querySelector('.tabs').hidden=true}else if(/tab=card/.test(location.search)){document.querySelector('.tabs').hidden=true}
 })();
 </script>
 

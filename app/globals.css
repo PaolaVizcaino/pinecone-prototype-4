@@ -118,3 +118,24 @@ section.block{padding-block:40px;display:flex;flex-direction:column;gap:22px}
 .tries button:hover{background:rgba(255,255,255,.22)}
 @media (max-width:1000px){.modules--4{grid-template-columns:repeat(2,1fr)}.modules{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.modules,.modules--4{grid-template-columns:1fr}.qbar{padding-left:16px}.qbar__go{padding:12px 14px}}
+
+/* Learn panel beside the game */
+.qgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,1fr);gap:28px;align-items:start}
+.learn{background:var(--surface);border-radius:20px;box-shadow:var(--shadow);padding:24px;display:flex;flex-direction:column;gap:6px;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
+.learn h2{font-size:24px;margin-bottom:8px}
+.learn details{border-top:1px solid var(--line)}
+.learn summary{cursor:pointer;font-weight:700;color:var(--navy-deep);padding:14px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.learn summary::-webkit-details-marker{display:none}
+.learn summary::after{content:"+";font-size:22px;font-weight:500;color:var(--teal-text);line-height:1}
+.learn details[open] summary::after{content:"\2212"}
+.learn__body{display:flex;flex-direction:column;gap:12px;padding-bottom:18px;font-size:16px;color:var(--muted);margin:0}
+.learn__who{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-text)}
+.learn__terms dt{font-weight:700;color:var(--ink)}
+.learn__terms dd{margin:2px 0 0}
+.learn__myth{font-weight:700;color:var(--ink)}
+.learnjump{display:none}
+@media (max-width:1000px){
+  .qgrid{grid-template-columns:1fr}
+  .learn{position:static;max-height:none}
+  .learnjump{display:inline-block;margin-bottom:14px;font-weight:700;font-size:15px;color:var(--teal-text)}
+}

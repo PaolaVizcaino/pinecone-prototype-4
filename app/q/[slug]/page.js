@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import GameFrame from '@/components/GameFrame';
+import LearnPanel from '@/components/LearnPanel';
 import { questions, situations, calculators } from '@/lib/content';
 
 export function generateStaticParams() {
@@ -24,14 +25,11 @@ export default function QuestionPage({ params }) {
         <p className="muted" style={{ fontSize: 20 }}>{q.blurb} About {q.minutes} minutes.</p>
       </div>
 
-      <GameFrame game={q.game} />
-
-      <section className="block">
-        <h2>The short version</h2>
-        <div className="ideas">
-          {q.ideas.map(([h, p]) => <div key={h}><h3>{h}</h3><p className="muted">{p}</p></div>)}
-        </div>
-      </section>
+      <a className="learnjump" href="#learn">New to this? Read the idea behind it</a>
+      <div className="qgrid">
+        <GameFrame game={q.game} />
+        <LearnPanel learn={q.learn} />
+      </div>
 
       <section className="block narrow">
         <h2>Before you decide, ask yourself</h2>
