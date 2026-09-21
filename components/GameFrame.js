@@ -16,12 +16,8 @@ export default function GameFrame({ game }) {
     return () => window.removeEventListener('message', on);
   }, [game.kind]);
   return (
-    <div className="frame" id="try">
-      <div className="frame-top">
-        <b>Try it: {game.name}</b>
-        <a href={game.src} target="_blank" rel="noreferrer">Open full screen</a>
-      </div>
-      <iframe ref={ref} src={game.src} title={game.name} style={{ height: h }} loading="eager" />
+    <div className={`frame frame--${game.kind}`} id="try">
+      <iframe ref={ref} src={game.src} title={game.name} style={{ height: h }} loading="eager" scrolling={game.kind === 'local' ? 'no' : 'auto'} />
     </div>
   );
 }

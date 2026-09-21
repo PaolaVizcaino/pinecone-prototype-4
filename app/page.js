@@ -12,12 +12,11 @@ export default function Home() {
           <div className="sechead"><h2>Or find your situation</h2></div>
           <div className="sitgrid">
             {situations.map((s) => {
-              const live = s.qs.filter((q) => q[1]).length;
               return (
-                <Link key={s.slug} href={`/situations/${s.slug}`} className="sit">
+                <Link key={s.slug} href={`/situations/${s.slug}`} className="sitcard" style={{ '--c': s.hex }}>
+                  <span className="tag tag--topic">{s.topic}</span>
                   <h3>{s.name}</h3>
-                  <p className="muted">{s.blurb}</p>
-                  <p className="tiny">{s.qs.length} questions{live ? ` · ${live} ready to try` : ''}</p>
+                  <p>{s.blurb}</p>
                 </Link>
               );
             })}
@@ -25,11 +24,18 @@ export default function Home() {
         </section>
 
         <section className="block">
-          <div className="sechead"><h2>Calculators</h2></div>
-          <p className="muted narrow">Already know what you need to compute? Go straight to the tool. Each calculator also appears on the question pages where it helps.</p>
-          <div className="row">
-            {calculators.slice(0, 4).map((c) => <Link key={c.id} href="/calculators" className="btn ghost">{c.name}</Link>)}
-            <Link href="/calculators" className="btn">All calculators</Link>
+          <div className="sechead">
+            <h2>Calculators</h2>
+            <Link className="linkbtn" href="/calculators">All calculators →</Link>
+          </div>
+          <div className="sitgrid">
+            {calculators.slice(0, 5).map((c) => (
+              <a key={c.id} className="sitcard" href={c.url} target="_blank" rel="noreferrer">
+                <span className="tag">Calculator</span>
+                <h3>{c.name}</h3>
+                <p>{c.does}</p>
+              </a>
+            ))}
           </div>
         </section>
       </div>

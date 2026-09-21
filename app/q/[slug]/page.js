@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import GameFrame from '@/components/GameFrame';
 import LearnPanel from '@/components/LearnPanel';
 import QuestionCard from '@/components/QuestionCard';
+import { QuickCheck, Confidence } from '@/components/CheckIn';
 import { questions, situations, calculators } from '@/lib/content';
 
 export function generateStaticParams() {
@@ -32,6 +33,8 @@ export default function QuestionPage({ params }) {
         <LearnPanel learn={q.learn} />
       </div>
 
+      <QuickCheck check={q.check} />
+
       <section className="block narrow">
         <h2>Before you decide, ask yourself</h2>
         <ol className="ask">{q.ask.map((a) => <li key={a}>{a}</li>)}</ol>
@@ -52,6 +55,8 @@ export default function QuestionPage({ params }) {
           )}
         </div>
       </section>
+
+      <Confidence question={q.confidence} />
 
       <section className="block">
         <div className="sechead">
