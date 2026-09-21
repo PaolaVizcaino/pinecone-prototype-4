@@ -139,3 +139,5 @@ section.block{padding-block:40px;display:flex;flex-direction:column;gap:22px}
   .learn{position:static;max-height:none}
   .learnjump{display:inline-block;margin-bottom:14px;font-weight:700;font-size:15px;color:var(--teal-text)}
 }
+
+a.linkbtn{text-decoration:none}

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import GameFrame from '@/components/GameFrame';
 import LearnPanel from '@/components/LearnPanel';
+import QuestionCard from '@/components/QuestionCard';
 import { questions, situations, calculators } from '@/lib/content';
 
 export function generateStaticParams() {
@@ -52,12 +53,14 @@ export default function QuestionPage({ params }) {
         </div>
       </section>
 
-      <section className="block narrow">
-        <h2>Where to next</h2>
-        <ul className="list">
-          {q.related.map((slug) => <li key={slug}><Link href={`/q/${slug}`}>{questions[slug].title}<span aria-hidden="true">→</span></Link></li>)}
-          <li><Link href={`/situations/${sit.slug}`}>More on: {sit.name}<span aria-hidden="true">→</span></Link></li>
-        </ul>
+      <section className="block">
+        <div className="sechead">
+          <h2>Where to next</h2>
+          <Link className="linkbtn" href={`/situations/${sit.slug}`}>More on: {sit.name} →</Link>
+        </div>
+        <div className="modules">
+          {q.related.map((slug) => <QuestionCard key={slug} slug={slug} q={questions[slug]} />)}
+        </div>
       </section>
     </div>
   );
