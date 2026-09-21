@@ -21,7 +21,7 @@ export default function QuestionPage({ params }) {
       <p className="crumbs"><Link href="/">Home</Link> / <Link href={`/situations/${sit.slug}`}>{sit.name}</Link></p>
       <div className="qhead narrow">
         <h1>{q.title}</h1>
-        <p className="muted" style={{ fontSize: 20 }}>{q.blurb} About {q.minutes} minutes. No sign-up.</p>
+        <p className="muted" style={{ fontSize: 20 }}>{q.blurb} About {q.minutes} minutes.</p>
       </div>
 
       <GameFrame game={q.game} />
@@ -51,15 +51,6 @@ export default function QuestionPage({ params }) {
           ) : (
             <div><a className="btn ghost" href={calc.url} target="_blank" rel="noreferrer">Open the {calc.name.toLowerCase()}</a></div>
           )}
-        </div>
-      </section>
-
-      <section className="block narrow">
-        <h2>Go deeper</h2>
-        <div className="deeper">
-          <p className="tiny">{q.lesson.module}</p>
-          <h3>{q.lesson.name}</h3>
-          <p className="muted">In the full course: {q.lesson.extras.join(' · ')}</p>
         </div>
       </section>
 

@@ -12,7 +12,7 @@ export default function Calculators() {
       </div>
       <div className="grid" style={{ paddingBottom: 24 }}>
         {calculators.map((c) => (
-          <div key={c.id} className="qcard" style={{ transform: 'none' }}>
+          <div key={c.id} className="module" style={{ transform: 'none', padding: 24, gap: 10 }}>
             <h3>{c.name}</h3>
             <p className="muted">{c.does}</p>
             {c.usedIn.length > 0 && (
