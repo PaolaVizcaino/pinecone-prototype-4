@@ -129,7 +129,7 @@ section.block{padding-block:40px;display:flex;flex-direction:column;gap:22px}
 .learn summary::after{content:"+";font-size:22px;font-weight:500;color:var(--teal-text);line-height:1}
 .learn details[open] summary::after{content:"\2212"}
 .learn__body{display:flex;flex-direction:column;gap:12px;padding-bottom:18px;font-size:16px;color:var(--muted);margin:0}
-.learn__who{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-text)}
+.learn__who{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-text);margin-bottom:-6px}
 .learn__terms dt{font-weight:700;color:var(--ink)}
 .learn__terms dd{margin:2px 0 0}
 .learn__myth{font-weight:700;color:var(--ink)}

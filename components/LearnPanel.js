@@ -1,5 +1,15 @@
+import { crew } from '@/lib/content';
+
+function intro(who) {
+  const names = who.split(/ and |, /).map((n) => n.trim()).filter((n) => crew[n]);
+  if (!names.length) return null;
+  const parts = names.map((n) => `${n} ${crew[n].job}: ${crew[n].trait}`);
+  return `${names.length > 1 ? 'Two' : 'One'} of the five people whose money stories run through Pinecone. ${parts.join('. ')}.`;
+}
+
 // The theory behind each game. Sits beside the game on wide screens, below it on phones.
 export default function LearnPanel({ learn }) {
+  const who = intro(learn.example.who);
   return (
     <aside className="learn" id="learn" aria-labelledby="learn-title">
       <p className="eyebrow">Learn</p>
@@ -11,9 +21,10 @@ export default function LearnPanel({ learn }) {
       </details>
 
       <details>
-        <summary>{learn.example.title}</summary>
+        <summary>A story: {learn.example.title}</summary>
         <div className="learn__body">
-          <p className="learn__who">Story · {learn.example.who}</p>
+          {who && <p className="learn__who">Meet {learn.example.who}</p>}
+          {who && <p>{who}</p>}
           <p>{learn.example.text}</p>
         </div>
       </details>

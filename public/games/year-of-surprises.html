@@ -195,7 +195,7 @@ function sync(){
   chips($('#haveChips'),[{k:0,t:'Nothing yet',v:0},{k:1,t:'1 month · '+fmt(need),v:need},{k:3,t:'3 months · '+fmt(need*3),v:need*3},{k:6,t:'6 months · '+fmt(need*6),v:need*6}],it=>{setVal('#have',it.v);if(it.v===0)$('#have').value='0';sync()});
   $('#to2').disabled=val('#need')<100;goal();
 }
-chips($('#needChips'),[{k:1,t:'$1,500',v:1500},{k:2,t:'$2,500',v:2500},{k:3,t:'$4,000',v:4000},{k:4,t:"Not sure? Use Sam's $3,000",v:3000,ghost:true}],it=>{setVal('#need',it.v);sync()});
+chips($('#needChips'),[{k:1,t:'$1,500',v:1500},{k:2,t:'$2,500',v:2500},{k:3,t:'$4,000',v:4000},{k:4,t:"Not sure? Try $3,000",v:3000,ghost:true}],it=>{setVal('#need',it.v);sync()});
 
 function show(id){['s1','s2','s3','s4'].forEach((s,i)=>{$('#'+s).hidden=s!==id;});const n=+id[1];[...$('#prog').children].forEach((d,i)=>d.className=i<n?'on':'');(window.self===window.top&&window.scrollTo(0,0))}
 document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>{if(!running)show(b.dataset.back)});
