@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import QuestionCard from '@/components/QuestionCard';
+import CalcCard from '@/components/CalcCard';
 import { situations, calculators, questions } from '@/lib/content';
 
 export function generateStaticParams() {
@@ -61,11 +62,7 @@ export default function SituationPage({ params }) {
           <div className="sechead"><h2>Calculators for this situation</h2></div>
           <div className="sitgrid">
             {calcs.map((c) => (
-              <a key={c.id} className="sitcard" href={c.url} target="_blank" rel="noreferrer">
-                <span className="tag">Calculator</span>
-                <h3>{c.name}</h3>
-                <p>{c.does}</p>
-              </a>
+              <CalcCard key={c.id} c={c} />
             ))}
           </div>
         </section>

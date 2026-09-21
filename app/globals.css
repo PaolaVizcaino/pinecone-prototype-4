@@ -173,3 +173,10 @@ a.linkbtn{text-decoration:none}
 .tap button{font:inherit;font-weight:700;cursor:pointer;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:12px 0}
 .tap button[aria-pressed=true]{border-color:var(--teal);background:var(--teal);color:#fff}
 .tapnote{display:flex;justify-content:space-between;max-width:380px;font-size:13px;color:#6b7075;margin-top:-8px}
+
+/* Calculator tiles */
+.calccard{display:flex;flex-direction:column;gap:8px;background:var(--teal);color:#fff;border-radius:14px;padding:18px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+.calccard:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,122,138,.28)}
+.calccard__icon{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.16);display:grid;place-items:center;margin-bottom:4px}
+.calccard h3{color:#fff;font-size:17px;line-height:1.25}
+.calccard p{font-size:14px;color:#d6efef;flex:1}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import HomeTop from '@/components/HomeTop';
+import CalcCard from '@/components/CalcCard';
 import { situations, calculators } from '@/lib/content';
 
 export default function Home() {
@@ -30,11 +31,7 @@ export default function Home() {
           </div>
           <div className="sitgrid">
             {calculators.slice(0, 5).map((c) => (
-              <a key={c.id} className="sitcard" href={c.url} target="_blank" rel="noreferrer">
-                <span className="tag">Calculator</span>
-                <h3>{c.name}</h3>
-                <p>{c.does}</p>
-              </a>
+              <CalcCard key={c.id} c={c} />
             ))}
           </div>
         </section>

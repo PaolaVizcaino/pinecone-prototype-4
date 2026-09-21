@@ -1,3 +1,4 @@
+import CalcCard from '@/components/CalcCard';
 import { calculators } from '@/lib/content';
 
 export const metadata = { title: 'Calculators · Pinecone by Stanford' };
@@ -11,11 +12,7 @@ export default function Calculators() {
       </div>
       <div className="sitgrid" style={{ paddingBottom: 24 }}>
         {calculators.map((c) => (
-          <a key={c.id} className="sitcard" href={c.url} target="_blank" rel="noreferrer">
-            <span className="tag">Calculator</span>
-            <h3>{c.name}</h3>
-            <p>{c.does}</p>
-          </a>
+          <CalcCard key={c.id} c={c} />
         ))}
       </div>
     </div>
