@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lessons to life situations · Pinecone</title></head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+<style>
+:root{
+  --m1:#8A2338;--m2:#1F7D6B;--m3:#9A6200;--m4:#2F5FA8;--m5:#6B4AA0;--chip-ink:#FFFFFF;--ground:#FBF8F3; --surface:#FFFFFF; --sunken:#F3EDE6; --ink:#2B2326; --muted:#6B5F63; --line:#E2D9D2;
+  --maroon:#8A2338; --bar:#8A2338; --bar-ink:#FFFFFF; --teal:#1F7D6B; --teal-ink:#FFFFFF; --teal-soft:#DDF0EB; --teal-text:#14594C;
+  --debt:#B3261E; --debt-soft:#FBE4E1; --amber:#8A5A00; --amber-soft:#FBEFD5;
+  --sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif; --serif:"Source Serif 4",Georgia,serif;
+}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;margin:0}
+.bar{background:var(--bar);color:var(--bar-ink);padding:10px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.bar b{font-family:var(--serif);font-size:18px;letter-spacing:.01em}
+.bar span{font-size:13px;opacity:.85}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:28px 56px;display:flex;flex-direction:column;gap:32px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--maroon);margin:0 0 8px}
+h1{font-family:var(--serif);font-size:clamp(30px,6vw,44px);line-height:1.1;margin:0 0 12px;text-wrap:balance}
+h2{font-family:var(--serif);font-size:24px;line-height:1.2;margin:0 0 8px;text-wrap:balance}
+h3{font-size:17px;margin:0 0 6px}
+p{margin:0 0 10px;max-width:65ch} .muted{color:var(--muted)} .small{font-size:14px}
+.promise{font-size:19px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:18px}
+.sam{display:flex;gap:14px;align-items:flex-start}
+.avatar{flex:none;width:52px;height:52px;border-radius:50%;background:var(--teal-soft);color:var(--teal-text);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:22px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0;padding:0;list-style:none}
+.facts li{background:var(--sunken);border-radius:10px;padding:10px 12px;font-size:14px;color:var(--muted)}
+.facts strong{display:block;color:var(--ink);font-size:18px;font-variant-numeric:tabular-nums}
+label.field{display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--muted)}
+input[type=number]{font:inherit;font-size:18px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);width:100%;max-width:180px}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.seg button,.tap button,.opt{font:inherit;cursor:pointer;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:10px 6px;text-align:center;line-height:1.2}
+.seg button small{display:block;color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.seg button[aria-pressed=true],.tap button[aria-pressed=true],.opt[aria-pressed=true]{border-color:var(--teal);background:var(--teal-soft);color:var(--teal-text);font-weight:700}
+.seg button[aria-pressed=true] small{color:var(--teal-text)}
+.switch{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.switch input{width:20px;height:20px;margin-top:2px;accent-color:var(--teal)}
+.cta{font:inherit;font-weight:700;font-size:18px;border:0;border-radius:10px;padding:14px 20px;background:var(--teal);color:var(--teal-ink);cursor:pointer}
+.cta.ghost{background:transparent;color:var(--teal-text);border:1.5px solid var(--teal)}
+.cta:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--maroon);outline-offset:2px}
+.months{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(min-width:620px){.months{grid-template-columns:repeat(4,1fr)}}
+.mo{border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-height:84px;background:var(--sunken);font-size:13px;display:flex;flex-direction:column;gap:2px}
+.mo b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.mo .q{font-family:var(--serif);font-size:26px;color:var(--line);margin:auto}
+.mo.quiet{background:var(--surface)}
+.mo.ok{background:var(--teal-soft);border-color:var(--teal)} .mo.ok .tag{color:var(--teal-text)}
+.mo.card{background:var(--debt-soft);border-color:var(--debt)} .mo.card .tag{color:var(--debt)}
+.mo .cost{font-variant-numeric:tabular-nums;font-weight:700;font-size:15px}
+.mo .tag{font-weight:700;font-size:12px}
+.meters{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.meter{border-radius:10px;padding:10px 12px;background:var(--sunken)}
+.meter span{font-size:13px;color:var(--muted);display:block}
+.meter strong{font-size:24px;font-variant-numeric:tabular-nums}
+.meter.fund strong{color:var(--teal-text)} .meter.debt strong{color:var(--debt)}
+.chart{width:100%;height:auto;display:block}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.verdict{border-left:4px solid var(--teal);padding:4px 0 4px 14px;font-size:18px}
+.verdict.bad{border-color:var(--debt)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums;min-width:520px}
+th,td{text-align:right;padding:9px 10px;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+tr.you td{background:var(--teal-soft)}
+td.neg{color:var(--debt);font-weight:700}
+.think{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.think li{padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.think li b{display:block}
+.match{display:flex;flex-direction:column;gap:12px}
+.stage{display:grid;grid-template-columns:1fr;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+@media(min-width:620px){.stage{grid-template-columns:1.1fr 1.6fr;align-items:center}}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.opt{font-size:14px;padding:9px 4px}
+.opt.right{border-color:var(--teal);background:var(--teal-soft);color:var(--teal-text)}
+.opt.wrong{border-color:var(--debt);background:var(--debt-soft);color:var(--debt)}
+.fb{font-size:14px;color:var(--muted);grid-column:1/-1}
+.tap{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;max-width:360px}
+.tapnote{display:flex;justify-content:space-between;max-width:360px;font-size:12px;color:var(--muted)}
+.next{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.next a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);text-decoration:none;font-weight:600}
+.next a span{color:var(--teal-text)}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+@media (prefers-reduced-motion:no-preference){.mo{transition:background .25s,border-color .25s}}
+
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tabs button{font:inherit;font-weight:600;cursor:pointer;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:12px 10px;line-height:1.25;text-align:left}
+.tabs button small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.tabs button[aria-selected=true]{border-color:var(--maroon);box-shadow:inset 0 -3px 0 var(--maroon)}
+.view{display:flex;flex-direction:column;gap:32px}
+input[type=range]{width:100%;accent-color:var(--teal);height:32px}
+.big{font-family:var(--serif);font-size:34px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.guess{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.stat{background:var(--sunken);border-radius:10px;padding:10px 12px}
+.stat span{display:block;font-size:13px;color:var(--muted)}
+.stat strong{font-size:22px;font-variant-numeric:tabular-nums}
+.stat.bad strong{color:var(--debt)} .stat.good strong{color:var(--teal-text)}
+.cars{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.cars button{font:inherit;cursor:pointer;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:10px 12px;text-align:left;line-height:1.3}
+.cars button small{display:block;color:var(--muted);font-size:13px}
+.cars button[aria-pressed=true]{border-color:var(--teal);background:var(--teal-soft);color:var(--teal-text);font-weight:700}
+.cars button[aria-pressed=true] small{color:var(--teal-text)}
+.share{height:14px;border-radius:7px;background:var(--sunken);overflow:hidden}
+.share i{display:block;height:100%;background:var(--teal);border-radius:7px}
+.share i.hot{background:var(--debt)}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
+.plans .opt{text-align:left;padding:12px;font-size:15px}
+.plans .opt small{display:block;color:var(--muted);font-size:13px;font-weight:400}
+.node{cursor:pointer}.node:focus-visible{outline:3px solid var(--maroon);outline-offset:2px}.qs{margin:4px 0 8px;padding-left:20px}.qs li{padding:0;border:0;background:none;border-radius:0}
+.sgrid{display:grid;align-items:start;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.scard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}.scard h3{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px}.scard .dots{display:inline-flex;gap:4px}.scard .dots i{width:10px;height:10px;border-radius:3px;display:block}.scard ul{margin:0;padding-left:20px}.scard li{margin-bottom:4px}.scard p{margin:8px 0 0}
+</style>
+
+<div class="bar"><b>Pinecone</b><span>Course lessons mapped to real-life situations</span></div>
+<div class="wrap" style="max-width:1000px">
+<header>
+  <p class="eyebrow">Website concept</p>
+  <h1>From lessons to the questions people ask</h1>
+  <p class="promise">The course has 17 lessons in 5 modules. People don't arrive asking for a lesson. They arrive in a situation, with a question. Tap any lesson or situation to trace the connection.</p>
+</header>
+
+<section class="panel">
+  <div class="legend" id="modLegend"></div>
+  <div class="tablewrap"><svg id="map" role="img" aria-label="Links between course lessons and life situations" style="min-width:760px;width:100%;height:auto;display:block"></svg></div>
+  <div id="detail" aria-live="polite"></div>
+</section>
+
+<section>
+  <h2>Possible questions for each situation</h2>
+  <p class="muted">Written the way people type them into Google or an AI assistant, so each one can become a page title. Dots show which modules answer it.</p>
+  <div class="sgrid" id="allq"></div>
+</section>
+
+<section>
+  <h2>What the map shows</h2>
+  <ul class="think">
+    <li><b>Situations cut across modules.</b>"Starting my first job" pulls from Modules 1 and 4. "Moving out" pulls from Modules 2 and 3. A situation page gathers pieces of several lessons.</li>
+    <li><b>A few lessons carry a lot.</b>Managing Credit and Workplace Investing each feed several situations, so they are the best first pages to build.</li>
+    <li><b>Concept lessons work as engines.</b>Compound interest, present value and inflation are rarely searched by name. They power the answers inside other questions.</li>
+  </ul>
+</section>
+<footer>Mapped from lesson and part titles in the live course (Revised Modules 1 to 3, Modules 4 and 5). Questions are proposals to check against search data and user sessions.</footer>
+</div>
+
+<script>
+(function(){
+const MODS=[['M1','Your Journey to Financial Freedom','--m1'],['M2','Budgeting and Money Management','--m2'],['M3','Saving and Borrowing Decisions','--m3'],['M4','Investing for the Future','--m4'],['M5','Planning for Retirement','--m5']];
+const LESSONS=[
+ ['1.1','Why Personal Finance Matters',0],['1.2','Time and Compound Interest',0],['1.3','What Future Money Is Worth Today',0],['1.4','Inflation',0],
+ ['2.1','The Balance Sheet',1],['2.2','The Cash Flow Statement',1],['2.3','The Budget',1],['2.4','Storing Personal Records',1],
+ ['3.1','Saving and the Life-Cycle Model',2],['3.2','Managing Credit',2],['3.B','Bonus: The Annuity Formula',2],['3.3','Maximizing Your Credit Score',2],['3.4','Housing and Mortgages',2],
+ ['4.1','Investing Basics',3],['4.2','Mutual Funds and ETFs',3],['4.3','Workplace Investing and Tax Saving',3],['4.4','Alternative Investments',3],
+ ['5','Planning for Retirement',4]];
+const SITS=[
+ {n:'Starting my first job',l:['4.3','1.1','1.2'],q:['How much should I put in my 401(k)?','What is an employer match, and am I leaving money on the table?','Roth or traditional, which one is for me?','HSA or FSA?','Why is my paycheck so much smaller than my salary?','Do I really need to think about retirement at 23?','What benefits should I sign up for?'],sim:'First day at work: Sam\'s benefits enrollment form'},
+ {n:'Getting my money organized',l:['2.1','2.2','2.3'],q:['Where does all my money go?','How do I make a budget I\'ll actually stick to?','How much should I be saving each month?','How do I know if I\'m doing okay financially?','What is net worth, and how do I calculate mine?','How do I budget when my income changes every month?'],sim:'Build your own budget, starting from Grace or Alex'},
+ {n:'Moving out or moving cities',l:['2.3','2.4','3.1'],q:['How much rent can I afford?','What documents do I need to rent an apartment?','How much should I have in an emergency fund?','How much does it cost to move to a new city?','Can I afford to live alone, or do I need roommates?','How long should I keep pay stubs and tax papers?'],sim:'A year of surprises: Sam\'s emergency fund'},
+ {n:'Dealing with debt',l:['3.2','3.B','3.1'],q:['What happens if I only pay the minimum on my credit card?','How do I pay off credit card debt faster?','Should I pay extra on my student loans?','Should I pay off debt or save first?','How are my loan payments calculated?','How long until I\'m debt free?','Why does my balance keep growing?'],sim:'The minimum payment trap, and Grace\'s payoff plan'},
+ {n:'Building credit',l:['3.3'],q:['How do I build credit from nothing?','What\'s a good credit score?','Does checking my score lower it?','Does closing a credit card hurt my score?','How many credit cards should I have?','How much does my score change what I pay for a loan?'],sim:'Credit score glow-up with Jasmine and Sofia'},
+ {n:'Buying a car',l:['3.2'],q:['How much car can I afford?','Should I lease or buy a car?','Is 0% financing a good deal?','New or used?','How long should my car loan be?','How much should I put down?'],sim:'Sam\'s test drive'},
+ {n:'Starting to invest',l:['4.1','4.2','4.4','1.2'],q:['How do I start investing with little money?','What\'s the difference between stocks and bonds?','What is an index fund?','ETF or mutual fund?','Do fees of 1% really matter?','Should I invest in crypto?','Is investing just gambling?','Is it worth it if I can only put in $50 a month?'],sim:'Investment Jenga, and the 1% question'},
+ {n:'Buying a home',l:['3.4','3.3'],q:['Should I rent or buy?','How much house can I afford?','Is a 15 or 30 year mortgage better?','How much does my credit score change my mortgage rate?','How much do I need for a down payment?','When does refinancing make sense?'],sim:'Grace buys a house'},
+ {n:'Comparing offers and big choices',l:['1.3','1.4'],q:['Should I take the signing bonus or the higher salary?','Is my raise actually a raise?','Is it better to get money now or later?','How much do I need to save now to have $20k in 5 years?','Is it bad to keep all my savings in a checking account?'],sim:'Offer A or offer B, and the shrinking paycheck'},
+ {n:'Thinking about retirement',l:['5','4.3','1.4'],q:['How much do I need to retire?','Am I saving enough for my age?','When can I retire if I save this much a month?','Should my investments get safer as I get older?','What is a target date fund?','What if the market crashes right before I retire?','How long will my savings last?'],sim:'Jasmine\'s retirement dial and transit map'}];
+
+const W=960,ROW=40,PADT=12,LW=340,RW=330,LX=0,RX=W-RW,H=PADT*2+LESSONS.length*ROW+4*10;
+const svg=document.getElementById('map');svg.setAttribute('viewBox','0 0 '+W+' '+H);
+let sel={type:'s',i:0};
+const ly=[];let y=PADT,prev=0;LESSONS.forEach((L,i)=>{if(L[2]!==prev){y+=10;prev=L[2]}ly[i]=y;y+=ROW});
+const sGap=(H-PADT*2-SITS.length*ROW)/(SITS.length-1),sy=SITS.map((_,i)=>PADT+i*(ROW+sGap));
+const idx=id=>LESSONS.findIndex(L=>L[0]===id);
+function active(li,si){return sel.type==='s'?sel.i===si:sel.i===li}
+function draw(){
+  let links='',nodes='';
+  SITS.forEach((S,si)=>S.l.forEach(id=>{const li=idx(id),a=active(li,si),c='var('+MODS[LESSONS[li][2]][2]+')';
+    const x1=LX+LW,y1=ly[li]+ROW/2-2,x2=RX,y2=sy[si]+ROW/2-2,mx=(x1+x2)/2;
+    const p='<path d="M'+x1+' '+y1+' C'+mx+' '+y1+' '+mx+' '+y2+' '+x2+' '+y2+'" fill="none" stroke="'+c+'" stroke-width="'+(a?4:2)+'" opacity="'+(a?0.95:0.16)+'"/>';
+    links=a?links+p:p+links}));
+  LESSONS.forEach((L,i)=>{const on=sel.type==='l'?sel.i===i:SITS[sel.i].l.includes(L[0]),c='var('+MODS[L[2]][2]+')';
+    nodes+='<g class="node" data-t="l" data-i="'+i+'" tabindex="0" role="button" aria-label="Lesson '+L[0]+' '+L[1]+'" opacity="'+(on?1:0.55)+'"><rect x="'+LX+'" y="'+ly[i]+'" width="'+LW+'" height="'+(ROW-5)+'" rx="7" fill="var(--surface)" stroke="'+c+'" stroke-width="'+(on?2.5:1.2)+'"/><rect x="'+LX+'" y="'+ly[i]+'" width="44" height="'+(ROW-5)+'" rx="7" fill="'+c+'"/><text x="'+(LX+22)+'" y="'+(ly[i]+23)+'" text-anchor="middle" font-size="14" font-weight="700" fill="var(--chip-ink)">'+L[0]+'</text><text x="'+(LX+54)+'" y="'+(ly[i]+23)+'" font-size="14.5" font-weight="'+(on?700:400)+'" fill="var(--ink)">'+L[1]+'</text></g>'});
+  SITS.forEach((S,i)=>{const on=sel.type==='s'?sel.i===i:S.l.includes(LESSONS[sel.i][0]);
+    nodes+='<g class="node" data-t="s" data-i="'+i+'" tabindex="0" role="button" aria-label="Situation: '+S.n+'" opacity="'+(on?1:0.55)+'"><rect x="'+RX+'" y="'+sy[i]+'" width="'+RW+'" height="'+(ROW-5)+'" rx="17" fill="'+(on?'var(--ink)':'var(--surface)')+'" stroke="var(--ink)" stroke-width="1.4"/><text x="'+(RX+18)+'" y="'+(sy[i]+23)+'" font-size="15" font-weight="700" fill="'+(on?'var(--ground)':'var(--ink)')+'">'+S.n+'</text></g>'});
+  svg.innerHTML=links+nodes;
+  svg.querySelectorAll('.node').forEach(g=>{const go=()=>{sel={type:g.dataset.t,i:+g.dataset.i};draw()};g.addEventListener('click',go);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
+  detail();
+}
+function sitCard(S){return '<li><b>'+S.n+'</b><span class="small muted">Questions</span><ul class="qs">'+S.q.map(q=>'<li>'+q+'</li>').join('')+'</ul><span class="small"><b style="display:inline">Simulation:</b> '+S.sim+'</span><span class="small muted" style="display:block">Lessons behind it: '+S.l.map(id=>id+' '+LESSONS[idx(id)][1]).join(' · ')+'</span></li>'}
+function detail(){
+  const d=document.getElementById('detail');
+  if(sel.type==='s'){d.innerHTML='<ul class="think">'+sitCard(SITS[sel.i])+'</ul>'}
+  else{const L=LESSONS[sel.i],hits=SITS.filter(S=>S.l.includes(L[0]));
+    d.innerHTML='<h3>Lesson '+L[0]+': '+L[1]+'</h3><p class="small muted">'+MODS[L[2]][1]+'. Feeds '+hits.length+(hits.length===1?' situation.':' situations.')+'</p><ul class="think">'+hits.map(sitCard).join('')+'</ul>'}
+}
+document.getElementById('modLegend').innerHTML=MODS.map(m=>'<span><i style="background:var('+m[2]+');height:10px;width:10px;border-radius:3px"></i>'+m[0]+' '+m[1]+'</span>').join('');
+document.getElementById('allq').innerHTML=SITS.map(S=>{const mods=[...new Set(S.l.map(id=>LESSONS[idx(id)][2]))].sort();return '<div class="scard"><h3>'+S.n+'<span class="dots" aria-hidden="true">'+mods.map(m=>'<i style="background:var('+MODS[m][2]+')"></i>').join('')+'</span></h3><ul>'+S.q.map(q=>'<li>'+q+'</li>').join('')+'</ul><p class="small muted">Lessons: '+S.l.join(', ')+'. Simulation: '+S.sim+'</p></div>'}).join('');
+draw();
+})();
+</script>
+
+</body></html>
