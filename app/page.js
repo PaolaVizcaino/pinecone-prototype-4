@@ -4,30 +4,31 @@ import { questions, situations, featured, calculators } from '@/lib/content';
 export default function Home() {
   return (
     <>
-      <div className="wrap hero">
-        <p className="eyebrow">Free from Stanford · No sign-up</p>
-        <h1>We won&apos;t tell you what to do with your money. We&apos;ll help you figure it out.</h1>
-        <p className="lead">Pick the question on your mind. Try it with your own numbers in about 5 minutes. Leave knowing how to think it through.</p>
-        <ul className="trust"><li>Nothing to sell</li><li>No advice, no gurus</li><li>Built on Stanford research</li></ul>
+      <div className="heroband">
+        <div className="wrap hero">
+          <p className="eyebrow">Free from Stanford · No sign-up</p>
+          <h1>We won&apos;t tell you what to do with your money. We&apos;ll help you figure it out.</h1>
+          <p className="lead">Pick the question on your mind. Try it with your own numbers in about 5 minutes. Leave knowing how to think it through.</p>
+          <ul className="trust"><li>Nothing to sell</li><li>No advice, no gurus</li><li>Built on Stanford research</li></ul>
+        </div>
       </div>
 
-      <div className="wrap">
-        <section className="block" id="questions">
-          <h2>Start with what&apos;s on your mind</h2>
-          <div className="grid">
-            {featured.map((slug) => {
-              const q = questions[slug];
-              return (
-                <Link key={slug} href={`/q/${slug}`} className="qcard">
-                  <span className="tag">Try it · {q.minutes} min</span>
-                  <h3>{q.title}</h3>
-                  <p className="muted">{q.blurb}</p>
-                  <span className="go">Start →</span>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
+      <div className="wrap featured" id="questions">
+        <h2>Start with what&apos;s on your mind</h2>
+        <div className="grid">
+          {featured.map((slug, i) => {
+            const q = questions[slug];
+            const accent = ['var(--sun)', 'var(--plum)', 'var(--sky)', 'var(--moss)'][i % 4];
+            return (
+              <Link key={slug} href={`/q/${slug}`} className="qcard" style={{ '--accent': accent }}>
+                <span className="tag">Try it · {q.minutes} min</span>
+                <h3>{q.title}</h3>
+                <p className="muted">{q.blurb}</p>
+                <span className="go">Start →</span>
+              </Link>
+            );
+          })}
+        </div>
       </div>
 
       <div className="band">

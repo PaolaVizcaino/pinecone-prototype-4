@@ -11,16 +11,18 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body>
         <header className="nav">
           <div className="nav-in">
-            <Link href="/" className="brand">Pinecone <span>by Stanford</span></Link>
-            <nav aria-label="Main">
-              <Link href="/#questions">Questions</Link>
-              <Link href="/#situations">Situations</Link>
+            <Link href="/" className="brand" aria-label="Pinecone by Stanford, home"><img src="/logo.png" alt="Pinecone by Stanford" width={150} height={46} /></Link>
+            <nav aria-label="Site">
+              <a href="#">Video Portal</a>
+              <a href="#">Podcast</a>
               <Link href="/calculators">Calculators</Link>
+              <a href="https://ifdm.stanford.edu" target="_blank" rel="noreferrer">Stanford IFDM</a>
             </nav>
           </div>
         </header>

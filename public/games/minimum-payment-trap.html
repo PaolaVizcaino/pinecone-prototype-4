@@ -1,24 +1,15 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Minimum Payment Trap</title></head>
 <body>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
 :root{
-  --ground:#FBF8F3; --surface:#FFFFFF; --sunken:#F3EDE6; --ink:#2B2326; --muted:#6B5F63; --line:#E2D9D2;
-  --maroon:#8A2338; --bar:#8A2338; --bar-ink:#FFFFFF; --teal:#1F7D6B; --teal-ink:#FFFFFF; --teal-soft:#DDF0EB; --teal-text:#14594C;
-  --debt:#B3261E; --debt-soft:#FBE4E1;
-  --sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif; --serif:"Source Serif 4",Georgia,serif;
+  --ground:#f5f6f7; --surface:#ffffff; --sunken:#eef1f3; --ink:#1c1c1e; --muted:#4a4f55; --line:#e2e5e8;
+  --maroon:#8c1515; --bar:#8c1515; --bar-ink:#ffffff; --teal:#007a8a; --teal-ink:#ffffff; --teal-soft:#e6f5f3; --teal-text:#005f6b;
+  --debt:#b3261e; --debt-soft:#fbe4e1;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; --serif:var(--sans);
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --ground:#1A1416; --surface:#251D20; --sunken:#2E2529; --ink:#F2EAE7; --muted:#B5A8AB; --line:#40343A;
-  --maroon:#F0A0AE; --bar:#5E1827; --bar-ink:#FBEFF1; --teal:#55C2AA; --teal-ink:#0D2B25; --teal-soft:#1D3B35; --teal-text:#8ADBC8;
-  --debt:#FF9185; --debt-soft:#45211E;
-}}
-:root[data-theme="dark"]{
-  --ground:#1A1416; --surface:#251D20; --sunken:#2E2529; --ink:#F2EAE7; --muted:#B5A8AB; --line:#40343A;
-  --maroon:#F0A0AE; --bar:#5E1827; --bar-ink:#FBEFF1; --teal:#55C2AA; --teal-ink:#0D2B25; --teal-soft:#1D3B35; --teal-text:#8ADBC8;
-  --debt:#FF9185; --debt-soft:#45211E;
-}
+h1,h2{font-weight:800;letter-spacing:-0.01em;color:#0f2c3c}
 *{box-sizing:border-box}[hidden]{display:none!important}
 body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.5;margin:0}
 .bar{background:var(--bar);color:var(--bar-ink);padding:10px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
@@ -39,7 +30,7 @@ p{margin:0} .muted{color:var(--muted)} .small{font-size:15px}
 .money input{font-family:var(--serif);font-weight:700;font-size:38px;border:0;background:transparent;color:var(--ink);width:100%;min-width:0;padding:0;font-variant-numeric:tabular-nums}
 .money input:focus{outline:none}
 .money:focus-within{border-color:var(--maroon)}
-.money.pct{max-width:130px}.money.pct input{width:2.4em;flex:none}
+.money.pct{max-width:130px}.money.pct input{width:1.9em;flex:none;text-align:right}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{font:inherit;font-size:16px;cursor:pointer;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;line-height:1.2}
 .chip[aria-pressed=true]{border-color:var(--teal);background:var(--teal-soft);color:var(--teal-text);font-weight:700}
@@ -50,7 +41,7 @@ p{margin:0} .muted{color:var(--muted)} .small{font-size:15px}
 .cta:disabled{opacity:.45;cursor:default}
 .link{font:inherit;font-size:16px;background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;padding:6px 0;align-self:flex-start}
 .nav{display:flex;flex-direction:column;gap:6px}
-button:focus-visible,input:focus-visible{outline:3px solid var(--maroon);outline-offset:3px}
+button:focus-visible,input:focus-visible{outline:3px solid #f4c542;outline-offset:3px}
 input[type=range]{width:100%;accent-color:var(--teal);height:34px}
 .bignum{font-family:var(--serif);font-weight:700;font-size:clamp(36px,9vw,48px);line-height:1.05;font-variant-numeric:tabular-nums}
 .bignum.bad{color:var(--debt)} .bignum.good{color:var(--teal-text)}
